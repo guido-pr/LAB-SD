@@ -118,7 +118,7 @@ begin
 			pdverde2 <= "0";
 			pdvermelho2 <= "1";
 					
-            when others => 
+            	when others => 
 			verde1 <= "0";
 			vermelho1 <= "0";
 			amarelo1 <= "0";
