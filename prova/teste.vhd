@@ -21,7 +21,7 @@ architecture behavior of prova is
 
     -- Variáveis para o clock de 2 segundos
     constant CLK_FREQ : integer := 50000000; -- Frequência do clock principal (50 MHz)
-    constant MAX_COUNT : integer := CLK_FREQ * 2 - 1; -- Contagem para 2 segundos
+    constant MAX_COUNT : integer := CLK_FREQ - 1; -- Contagem para 2 segundos
     signal counter : integer := 0;
     signal slow_clock : std_logic := '0'; -- Clock lento
 begin
