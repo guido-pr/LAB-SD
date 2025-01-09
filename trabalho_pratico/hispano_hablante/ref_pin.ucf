@@ -1,0 +1,13 @@
+## Clock signal
+NET "clk" LOC = "E3" | IOSTANDARD = "LVCMOS33";               # Bank = 35, Pin name = IO_L12P_T1_MRCC_35, Sch name = CLK100MHZ
+NET "clk" TNM_NET = sys_clk_pin;
+
+## Pmod Header JC
+NET "M[0]" LOC = "K1" | IOSTANDARD = "LVCMOS33";             # Bank = 35, Pin name = IO_L23P_T3_35, Sch name = JC1
+NET "M[1]" LOC = "E6" | IOSTANDARD = "LVCMOS33";             # Bank = 35, Pin name = IO_L6P_T0_35, Sch name = JC2
+NET "M[2]" LOC = "J6" | IOSTANDARD = "LVCMOS33";             # Bank = 35, Pin name = IO_L22P_T3_35, Sch name = JC3
+NET "M[3]" LOC = "G6" | IOSTANDARD = "LVCMOS33";             # Bank = 35, Pin name = IO_L21P_T3_DQS_35, Sch name = JC4
+NET "B[0]" LOC = "E7" | IOSTANDARD = "LVCMOS33";             # Bank = 35, Pin name = IO_L23N_T3_35, Sch name = JC7
+NET "B[1]" LOC = "F4" | IOSTANDARD = "LVCMOS33";             # Bank = 35, Pin name = IO_L5P_T0_AD13P_35, Sch name = JC8
+NET "B[2]" LOC = "J4" | IOSTANDARD = "LVCMOS33";             # Bank = 35, Pin name = IO_L22N_T3_35, Sch name = JC9
+NET "B[3]" LOC = "H4" | IOSTANDARD = "LVCMOS33";             # Bank = 35, Pin name = IO_L19P_T3_35, Sch name = JC10
