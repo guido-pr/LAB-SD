@@ -2,15 +2,15 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-entity topMotor is
+entity stepmotor is
     Port (
         clk : in STD_LOGIC;
         M : out STD_LOGIC_VECTOR(3 downto 0);
         B : out STD_LOGIC_VECTOR(3 downto 0)
     );
-end topMotor;
+end stepmotor;
 
-architecture Behavioral of topMotor is
+architecture Behavioral of stepmotor is
     signal cont : STD_LOGIC_VECTOR(2 downto 0) := "000";
     signal clk_1 : STD_LOGIC;
     signal M_reg, B_reg : STD_LOGIC_VECTOR(3 downto 0) := (others => '0');
