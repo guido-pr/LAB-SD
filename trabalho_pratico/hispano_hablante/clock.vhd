@@ -2,14 +2,14 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-entity div_m is
+entity clock is
     Port (
         clk : in STD_LOGIC;             -- Entrada de clock
         clk_1 : out STD_LOGIC           -- Saída de clock dividido
     );
-end div_m;
+end clock;
 
-architecture Behavioral of div_m is
+architecture Behavioral of clock is
     signal cont : UNSIGNED(27 downto 0) := (others => '0');  -- Contador de 28 bits
     signal clk_1_reg : STD_LOGIC := '0';                    -- Sinal interno para clk_1
 begin
