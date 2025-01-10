@@ -21,7 +21,7 @@ begin
     B <= B_reg;
 
     -- Instância do módulo de divisão de clock (div_m)
-    div_instance: entity work.div_m
+    div_instance: entity work.clock
         port map (
             clk => clk,
             clk_1 => clk_1
