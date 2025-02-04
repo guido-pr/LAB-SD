@@ -28,7 +28,7 @@ process(clk)
 begin
     if rising_edge(clk) then
         if freq = '0' then  -- Slow speed
-            if counter < 200000 then  -- 200,000 cycles @50MHz = 4ms (250Hz)
+            if counter < 199999 then  -- 200,000 cycles @50MHz = 4ms (250Hz)
                 counter <= counter + 1;
                 step_pulse <= '0';
             else
@@ -36,7 +36,7 @@ begin
                 step_pulse <= '1';
             end if;
         else  -- Fast speed
-            if counter < 100000 then  -- 100,000 cycles @50MHz = 2ms (500Hz)
+            if counter < 99999 then  -- 100,000 cycles @50MHz = 2ms (500Hz)
                 counter <= counter + 1;
                 step_pulse <= '0';
             else
