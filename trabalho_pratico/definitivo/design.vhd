@@ -18,7 +18,6 @@ end stepmotor;
 architecture FSM of stepmotor is
     type state_type is (S0, S1, S2, S3, S4, S5, S6, S7);
     signal current_state, next_state : state_type := S0;
-    
     signal counter    : integer range 0 to 50000000 := 0;
     signal step_pulse : std_logic := '0';
 begin
