@@ -22,7 +22,6 @@ architecture FSM of stepmotor is
     signal step_pulse : std_logic := '0';
 begin
 
--- Clock divider for step timing (FIXED SYNTAX)
 process(clk)
 begin
     if rising_edge(clk) then
