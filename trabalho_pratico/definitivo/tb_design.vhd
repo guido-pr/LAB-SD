@@ -24,7 +24,7 @@ architecture sim of stepmotor_tb is
     signal freq   : STD_LOGIC := '0';
     signal coil_a, coil_b, coil_c, coil_d : STD_LOGIC;
 
-    constant CLK_PERIOD : time := 2 ns; -- 50 MHz
+    constant CLK_PERIOD : time := 20 ns; -- 50 MHz
 begin
 
     uut: stepmotor port map(
@@ -38,51 +38,49 @@ begin
         coil_d => coil_d
     );
 
-    -- Clock generation
+    -- Geração de clock
     clk <= not clk after CLK_PERIOD/2;
 
-    -- Stimulus process
+    -- Processo de estímulo
     stimulus: process
     begin
-        -- Initial reset
+        -- Reset inicial
         en <= '0';
         dir <= '0';
         freq <= '0';
         wait for 100 ns;
 
-        -- Test 1: Enable with forward direction and low speed
+        -- Teste 1: Ativação com direção forward e baixa velocidade
         en <= '1';
         dir <= '1';
         freq <= '0';
-        wait for 20 ms;  -- Observe several steps in the waveform
+        wait for 40 ms;  -- Verificar vários passos no waveform
 
-        -- Test 2: Change direction to reverse
+        -- Teste 2: Mudança de direção para reverse
         dir <= '0';
-        wait for 20 ms;
+        wait for 40 ms;
 
-        -- Test 3: Increase the speed
+        -- Teste 3: Aumento da velocidade
         freq <= '1';
         dir <= '1';
-        wait for 10 ms;
-
-        -- Test 4: Disable motor
-        en <= '0';
-        wait for 5 ms;
-        
-        -- Test 2: Change direction to reverse
-        dir <= '0';
         wait for 20 ms;
 
-        -- Test 3: Increase the speed
+        -- Teste 4: Desativar motor
+        en <= '0';
+        wait for 5 ms;-- Teste 2: Mudança de direção para reverse
+        dir <= '0';
+        wait for 40 ms;
+
+        -- Teste 3: Aumento da velocidade
         freq <= '1';
         dir <= '1';
+        wait for 20 ms;
+
+        -- Teste 4: Desativar motor
+        en <= '0';
         wait for 10 ms;
 
-        -- Test 4: Disable motor
-        en <= '0';
-        wait for 5 ms;
-
-        -- End simulation
+        -- Finalizar simulação
         wait;
     end process;
 
