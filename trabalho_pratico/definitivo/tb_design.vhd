@@ -54,16 +54,16 @@ begin
         en <= '1';
         dir <= '1';
         freq <= '0';
-        wait for 20 ms;  -- Verificar vários passos no waveform
+        wait for 32 ms;  -- Verificar vários passos no waveform
 
         -- Teste 2: Mudança de direção para reverse
         dir <= '0';
-        wait for 20 ms;
+        wait for 32 ms;
 
         -- Teste 3: Aumento da velocidade
         freq <= '1';
         dir <= '1';
-        wait for 20 ms;
+        wait for 16 ms;
 
         -- Teste 4: Desativar motor
         en <= '0';
